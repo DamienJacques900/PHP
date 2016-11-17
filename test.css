@@ -1,0 +1,42 @@
+body
+{
+	background-color : olive;
+}
+
+div
+{
+	width:800px;
+	text-align:center;
+	padding:6px;
+	color:white;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:black;
+}
+
+h1
+{
+	color:yellow;
+}
+
+#heure
+{
+	border: 2px solid olive
+}
+
+img
+{
+	float: right;
+    margin: 0px 0px 6px 6px;
+}
+
+.latin
+{
+	font-style: italic;
+}
+
+span
+{
+	color : yellow;
+	font-size : 200%
+}
