@@ -1,13 +1,6 @@
 <html>
 	<head>
 		<meta charset="UTF-8"/>
-		<script>
-			function commande()
-			{
-				var article = document.getElementById("inputCommande").value;
-				location.href="http://phpdamien.esy.es/commande.php";
-			}
-		</script>
 	</head>
 	
 	<body>
@@ -15,6 +8,13 @@
 			<label>Article : </label>
 			<input id="inputCommande" type="text" name="article"/>			
 		</p>
+		<script>
+			function commande()
+			{
+				var article = document.getElementById("inputCommande").value;
+				location.href='http://phpdamien.esy.es/commande.php?article='+article;
+			}
+		</script>
 		<button onclick="commande()">Commande</button>
 	</body>
 </html>

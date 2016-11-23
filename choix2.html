@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+	</head>
+	
+	<body>
+		<script>
+		/*
+		var numMax = 10; 
+		function actionCommande (num) 
+		{ 
+			function act() 
+			{ 
+				location.href = "commande.php?article=" + num; 
+			} 
+			return act; 
+		} 
+		
+		function init () 
+		{ 
+			for (var i = 1 ; i <= numMax ; i++) 
+			{ 
+				var nvNoeud = document.createElement("button"); 
+				nvNoeud.type = "button"; 
+				nvNoeud.innerHTML = i; 
+				nvNoeud.onclick = actionCommande(i); 
+				document.body.appendChild(nvNoeud); 
+			} 
+		} 
+		
+		window.onload = init;
+		*/
+			var numMax = 10;
+		
+			function commande(num)
+			{
+				function act() 
+				{ 
+					location.href="commande.php?article="+num;
+				}
+				return act;
+			}
+		
+			function init()
+			{
+				var i = 1;
+				while(i <= numMax)
+				{
+					var noeud = document.createElement("button");
+					noeud.type = "button";
+					noeud.innerHTML = i;
+					noeud.onclick = commande(i);
+					document.body.appendChild(noeud);
+					i++;
+				}
+			}
+			
+			window.onload = init;
+		</script>
+		
+	</body>
+</html>

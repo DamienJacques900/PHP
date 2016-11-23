@@ -35,7 +35,7 @@
 				?>
 				du mois
 			</p> 
-			<img src="Images/php.png"width="100px" alt="Elephant" style="text-align:center">
+			<img src="Image/php.png"width="100px" alt="Elephant" style="text-align:center">
 			
 			<p class="latin">
 				<span>L</span>orem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mollis aliquam. Cras eu odio ac quam dictum ornare. Mauris ante ante, sodales sed metus in, consectetur consequat massa. Donec elementum, leo vel scelerisque facilisis, urna velit porttitor metus, id varius tortor nibh a libero. Vivamus interdum non ex faucibus condimentum. Phasellus vitae feugiat metus. Nam iaculis tempus dictum. Duis eu ligula id leo ullamcorper tincidunt a ac lacus. Etiam gravida ut tellus et aliquam. Suspendisse ut orci ante. Nulla tempus sodales lacus, id egestas turpis scelerisque quis. Donec finibus ornare viverra. Cras vitae tincidunt metus. Sed posuere vehicula nulla, ac hendrerit metus varius eget. Nunc dui nisi, eleifend vel consectetur vel, condimentum ut mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
