@@ -6,7 +6,6 @@
 	<body>
 		<script>
 			var numMax = <?php
-							&ordreCroissant = true;
 							&nbPoints = 15;
 							echo &nbPoints;
 						 ?>;
@@ -23,7 +22,7 @@
 			function init()
 			{
 				for(var i = <?php
-								if(&ordreCroissant)
+								if(&ordreCroissant==true)
 									echo '1 ; i <= numMax ; i++';
 								else
 									echo 'numMax ; i >= numMax ; i--';
