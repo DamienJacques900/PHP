@@ -1,6 +1,6 @@
 <?php
 
-	abstract class Personnage
+	class Personnage
 	{
 		private $nom, $nbPointsVie;
 		
@@ -21,16 +21,39 @@
 		function __toString()
 		{
 			return "$this->nom($this->nbPointsVie)";
+		}	
+		
+		function getNom()
+		{
+			return $this->nom;
 		}
 		
-		abstract function blesse($adversaire);
+		function getNbPointsVie()
+		{
+			return $this->nbPointsVie;
+		}
+		
+		function afficherEtat()
+		{
+			echo $this->getNom()." : ".$this->getNbPointsVie()."/".static::MAXPV." pv\n";
+			//Pour ne pas avoir de problème avec MAXP, il faut changer le self en static
+		}
+		
+		function blesse($adversaire)
+		{
+			$adversaire->subitBlessure(static::DEGAT);
+			echo $this->__toString()." a blessé ".$adversaire->__toString()."\n"; 
+		}
 	}
+	
+	
+	
 	
 	class Guerrier extends Personnage
 	{
 		const MAXPV = 25;
 		const DEGAT = 5;
-		private $arme,$nom,$nbPointsVie;
+		private $arme;
 		
 		function __construct($nom,$nbPointsVie,$arme)
 		{
@@ -42,24 +65,13 @@
 		{
 			return parent::__toString()."(G)";
 		}
-		
+		/*
 		function blesse($adversaire)
 		{
 			$adversaire->subitBlessure(5);
 			echo $this->__toString()." a blessé ".$adversaire->__toString()."\n"; 
-		}
-		
-		function afficherEtat()
-		{
-			echo $this->nom." : ".$this->nbPointsVie."/".self::MAXPV." pv";
-		}
-		
+		}	*/	
 		/*
-		function afficherEtat()
-		{
-			echo $this->getNom()." : ".$this->getNbPointsVie()."/".self::MAXPV." pv\n";
-		}
-		*/
 		function __get($nom)
 		{
 			if($nom == "nom")
@@ -68,22 +80,8 @@
 			if($nom == "nbPointsVie")
 				echo "Super";
 				return $this->nbPointsVie;
-		}
-		
-		function getNom()
-		{
-			return $this->nom;
-		}
-		
-		function getNbPointsVie()
-		{
-			return $this->nbPointsVie;
-		}
+		}	*/		
 	}
-	
-	$homer = new Guerrier('Homer',20,'hache');
-	$homer->afficherEtat();
-	echo $homer->nom;
 	
 	class Magicien extends Personnage
 	{
@@ -100,29 +98,20 @@
 		{
 			return parent::__toString()."(M)";
 		}
-		
+		/*
 		function blesse($adversaire)
 		{
 			$adversaire->subitBlessure(3);
 			echo $this->__toString()." a blessé ".$adversaire->__toString()."\n"; 
-		}
+		}*/
 	}
 	
-	//$homer = new Personnage('Homer',20);
-	
-	//echo $homer;
-	
-	//$homer->subitBlessure(5);
-	
-	//echo $homer
-	
-	$harry = new Magicien('Harry',10);
-	
-	//echo $homer;
-	//echo $harry;
-	
-	//$homer->blesse($harry);
-	//$harry->blesse($homer);
-	
-	
+	$homer = new Guerrier("Homer", 20, "une hache"); 
+	$harry = new Magicien("Harry", 10); 
+	$homer->afficherEtat(); 
+	$harry->afficherEtat(); 
+	$homer->blesse($harry); 
+	$harry->afficherEtat(); 
+	$homer->blesse($homer); 
+	$homer->afficherEtat();
 ?>
