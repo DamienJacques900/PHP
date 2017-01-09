@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Ajout de membre</title>
+		<style>
+			#commentaires{
+				color:red;
+				font-weight:bold;
+			}
+			.message{
+				color:blue;
+				font-weight:bold;
+			}
+		</style>
+		<script>
+			window.onload=init;
+			function init(){
+				var psw = document.getElementById("mdp");
+				var com = document.getElementById("commentaires");
+			}
+			function checkPsw(){
+				if(psw.value.length<6){
+					com.innerHTML = "Minimum 6 caractères !";
+				}else{
+					var numb = psw.match(/\d/g);
+					numb = numb.join("");
+					if(numb){
+						com.innerHTML ="";
+					}else{
+						com.innerHTML = "Au moins 1 chiffre !";
+					}
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<form action="ajout.php" method="POST">
+		<p>
+			<label for="pseudo">Pseudo : </label>
+			<input id="pseudo" name="pseudo" type="text" required/>
+		</p>
+		<p>
+			<label for="mdp">Mot de passe : </label>
+			<input id="mdp" name="mdp" type="password" onclick="checkPsw" required/>
+			<span id="commentaires"></span>
+		</p>
+		<p>
+			<input id="admin" name="admin" type="checkbox"/>
+			<label for="admin">Admin</label>
+		</p>
+		<button id="submit" type="submit">Ajouter</button>
+		</form>
+	</body>
+
+</html>
